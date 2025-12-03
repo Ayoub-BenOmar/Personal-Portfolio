@@ -6,6 +6,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <div className="mt-6">
+          <div className="text-3xl font-bold text-green-800">Tailwind test — should be large and rose-colored</div>
+        </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
