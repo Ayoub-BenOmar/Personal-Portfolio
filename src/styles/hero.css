@@ -1,0 +1,203 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-text {
+  color: white;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Added typing animation support styles */
+.typing-title {
+  position: relative;
+  display: inline-block;
+  min-height: 4rem;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 4rem;
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+.font-mono {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.font-display {
+  font-family: "Trebuchet MS", "Lucida Grande", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #d0d0d0;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.scroll-indicator span {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.scroll-arrow {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transform: rotate(-45deg);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-45deg) translateY(10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
