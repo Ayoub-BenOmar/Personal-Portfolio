@@ -1,0 +1,17 @@
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0f172a; /* Dark Slate */
+  z-index: -1;
+  pointer-events: none;
+  /* The spotlight gradient */
+  background-image: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(6, 42, 143, 0.15),
+    transparent 80%
+  );
+  transition: background 0.3s ease;
+}
